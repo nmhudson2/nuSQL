@@ -1,0 +1,1 @@
+Select all customers from table and remove the top 5 rows
