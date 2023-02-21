@@ -10,7 +10,6 @@ CommandDict =  {
     "all":"*",
     "only":"DISTINCT",
     "copy":"INTO",
-    "top":"TOP",
     "nicknamed ":"AS",
     "from":"FROM",
     "where":"WHERE",
@@ -31,10 +30,13 @@ CommandDict =  {
     "remove":"DELETE",
     "alter":"ALTER TABLE",
     "amount-of":"COUNT",
+#START PARAN Section
     "sum-of":"SUM",
     "average":"AVG",
     "minimum":"MINI",
     "maximum":"MAX",
+    "top":"TOP",
+#END
     "in-order-of":"ORDER BY",
     "descending":"DESC",
     "offset-by":"OFFSET",
@@ -46,8 +48,11 @@ print(fileContents)
 infile.close()
 
 for word in fileContents:
-    if word not in CommandDict:
+    if word in DEFART:
+        continue
+    elif word not in CommandDict and word not in DEFART:
         USERVAR.append(word)
         outfile.write(word + " ")
+    # elif word == ""
     else:
         outfile.write(CommandDict[word]+" ")
