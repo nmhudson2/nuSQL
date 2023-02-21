@@ -1,0 +1,1 @@
+SELECT * customers FROM TABLE AND DELETE TOP 5 rows 
